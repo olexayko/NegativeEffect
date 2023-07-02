@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/weapons/rifles/rifle_item.gd" type="Script" id=1]
+[ext_resource path="res://inventory_items/equipable_items/weapons/inventory_equipment_weapon_item.tscn" type="PackedScene" id=2]
+[ext_resource path="res://weapon_rifle.png" type="Texture" id=3]
+
+[node name="InventoryRifleWeaponEquipmentItem" instance=ExtResource( 2 )]
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+pickup = "res://inventory_items/equipable_items/weapons/rifles/rifle_pickup.tscn"
+equipment = "res://inventory_items/equipable_items/weapons/rifles/rifle.tscn"
+equipment_type = "Rifle"

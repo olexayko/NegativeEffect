@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/gear/operating_systems/inventory_operating_system_equipment_item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ability_sorrow.png" type="Texture" id=2]
+
+[node name="SorrowOperatingSystemItem" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+pickup = "res://inventory_items/equipable_items/gear/operating_systems/sorrow_operating_system/sorrow_operating_system_pickup.tscn"
+equipment = "res://inventory_items/equipable_items/gear/operating_systems/sorrow_operating_system/sorrow_operating_system.tscn"

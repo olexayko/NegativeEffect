@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/inventory/equipment_slots/food/equipment_food_slot.gd" type="Script" id=1]
+[ext_resource path="res://ui/inventory/equipment_slots/equipment_slot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ui/inventory/equipment_slots/food/equipment_drag_food_slot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/inventory/equipment_slots/food/equipment_acceptable_food_slot.tscn" type="PackedScene" id=5]
+
+[node name="EquipmentFoodSlot" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="EquipmentAcceptableFoodSlot" parent="." index="2" instance=ExtResource( 5 )]
+inventory_slot = NodePath(".")
+
+[node name="EquipmentDragFoodSlot" parent="." index="3" instance=ExtResource( 4 )]
+inventory_slot = NodePath("..")

@@ -1,0 +1,34 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://characters/character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/character_classes/blade_character/blade_character.gd" type="Script" id=2]
+[ext_resource path="res://characters/character_classes/blade_character/states/blade_attack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/character_classes/blade_character/states/blade_attack_1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/character_classes/blade_character/states/blade_attack_2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/character_classes/blade_character/states/blade_attack_3.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/character_classes/blade_character/states/blade_attack_4.tscn" type="PackedScene" id=7]
+[ext_resource path="res://inventory_items/equipable_items/weapons/blade/blade.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 27.074
+
+[node name="BladeCharacter" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+attack = NodePath("StateMachine/BladeAttack")
+default_weapon = ExtResource( 8 )
+attack_type = "Blade"
+
+[node name="BladeAttack" parent="StateMachine" index="3" instance=ExtResource( 3 )]
+next_state = NodePath("../BladeAttack1")
+
+[node name="BladeAttack1" parent="StateMachine" index="4" instance=ExtResource( 4 )]
+next_attack_state = NodePath("../BladeAttack2")
+
+[node name="BladeAttack2" parent="StateMachine" index="5" instance=ExtResource( 5 )]
+
+[node name="BladeAttack3" parent="StateMachine" index="6" instance=ExtResource( 6 )]
+
+[node name="BladeAttack4" parent="StateMachine" index="7" instance=ExtResource( 7 )]
+
+[node name="CollisionShape2D" parent="AutoAim" index="0"]
+shape = SubResource( 1 )

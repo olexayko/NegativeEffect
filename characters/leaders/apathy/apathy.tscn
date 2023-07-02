@@ -1,0 +1,27 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://characters/character_classes/pistol_character/pistol_character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/leaders/apathy/apathy.gd" type="Script" id=2]
+[ext_resource path="res://characters/leaders/apathy/apathy.png" type="Texture" id=3]
+[ext_resource path="res://inventory_items/equipable_items/weapons/pistols/pistol.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/leaders/apathy/abilities/common.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/leaders/apathy/abilities/ultimate.tscn" type="PackedScene" id=6]
+
+[node name="Apathy" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+common_skill = NodePath("StateMachine/Common")
+ultimate_skill = NodePath("StateMachine/Ultimate")
+default_weapon = ExtResource( 4 )
+condition_type = "Apathy"
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 3 )
+
+[node name="Common" parent="StateMachine" index="4" instance=ExtResource( 5 )]
+
+[node name="Ultimate" parent="StateMachine" index="5" instance=ExtResource( 6 )]
+
+[node name="Label" parent="." index="4"]
+visible = true
+margin_top = -33.0
+margin_bottom = -17.0

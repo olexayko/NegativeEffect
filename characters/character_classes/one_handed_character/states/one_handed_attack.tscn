@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/character_classes/one_handed_character/states/one_handed_attack.gd" type="Script" id=1]
+[ext_resource path="res://characters/character_states/character_state.tscn" type="PackedScene" id=2]
+
+
+[node name="OneHandedAttack" instance=ExtResource( 2 )]
+script = ExtResource( 1 )

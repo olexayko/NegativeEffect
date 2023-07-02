@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/weapons/weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://inventory_items/equipable_items/weapons/rifles/rifle.gd" type="Script" id=2]
+
+[node name="Rifle" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+inventory_item = "res://inventory_items/equipable_items/weapons/rifles/inventory_rifle_weapon_equipment_item.tscn"

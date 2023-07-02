@@ -1,0 +1,179 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://characters/team.tscn" type="PackedScene" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://enemies/dummy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://pickups/pickable_character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/teammates/builder/builder.tscn" type="PackedScene" id=5]
+[ext_resource path="res://inventory_items/equipable_items/gear/brains/rage_brain/rage_brain_pickup.tscn" type="PackedScene" id=6]
+[ext_resource path="res://global/world.gd" type="Script" id=7]
+[ext_resource path="res://inventory_items/equipable_items/gear/brains/apathy_brain/apathy_brain_pickup.tscn" type="PackedScene" id=8]
+[ext_resource path="res://inventory_items/equipable_items/gear/nervous_systems/rage_nervous_system/rage_nervous_system_pickup.tscn" type="PackedScene" id=9]
+[ext_resource path="res://inventory_items/equipable_items/gear/operating_systems/sorrow_operating_system/sorrow_operating_system_pickup.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32, 32 )
+
+[node name="world" type="Node2D"]
+pause_mode = 2
+script = ExtResource( 7 )
+
+[node name="Team" parent="." instance=ExtResource( 1 )]
+pause_mode = 1
+speed = 125.0
+
+[node name="Enemy" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
+position = Vector2( 314, 83 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+pause_mode = 1
+position = Vector2( 377, 63 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+pause_mode = 1
+position = Vector2( 448, 32 )
+collision_layer = 64
+collision_mask = 15
+constant_linear_velocity = Vector2( 100, 100 )
+constant_angular_velocity = 100.0
+
+[node name="Sprite" type="Sprite" parent="Wall"]
+modulate = Color( 1, 0.74902, 0, 1 )
+position = Vector2( -7.62939e-06, 0 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+shape = SubResource( 1 )
+
+[node name="test_character_2" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
+position = Vector2( 138, 110 )
+character = ExtResource( 5 )
+
+[node name="test_character_4" parent="." instance=ExtResource( 4 )]
+pause_mode = 1
+position = Vector2( 86, 81 )
+
+[node name="RageBrainPickup" parent="." instance=ExtResource( 6 )]
+position = Vector2( 180, -28 )
+
+[node name="ApathyBrainPickup" parent="." instance=ExtResource( 8 )]
+position = Vector2( 22, -24 )
+
+[node name="RageBrainPickup2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, -64 )
+
+[node name="ApathyBrainPickup2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 26, -56 )
+
+[node name="RageBrainPickup3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 86, -52 )
+
+[node name="ApathyBrainPickup3" parent="." instance=ExtResource( 8 )]
+position = Vector2( 48, -44 )
+
+[node name="RageBrainPickup4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 80, -36 )
+
+[node name="ApathyBrainPickup4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 42, -28 )
+
+[node name="RageBrainPickup5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 66, -56 )
+
+[node name="ApathyBrainPickup5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 28, -48 )
+
+[node name="RageBrainPickup6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 82, -64 )
+
+[node name="ApathyBrainPickup6" parent="." instance=ExtResource( 8 )]
+position = Vector2( 44, -56 )
+
+[node name="RageBrainPickup7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 74, -46 )
+
+[node name="ApathyBrainPickup7" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, -38 )
+
+[node name="ApathyBrainPickup10" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, -38 )
+
+[node name="ApathyBrainPickup11" parent="." instance=ExtResource( 8 )]
+position = Vector2( 44, -56 )
+
+[node name="RageBrainPickup11" parent="." instance=ExtResource( 6 )]
+position = Vector2( 74, -46 )
+
+[node name="ApathyBrainPickup12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, -38 )
+
+[node name="ApathyBrainPickup13" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, -38 )
+
+[node name="ApathyBrainPickup14" parent="." instance=ExtResource( 8 )]
+position = Vector2( 44, -56 )
+
+[node name="RageBrainPickup12" parent="." instance=ExtResource( 6 )]
+position = Vector2( 74, -46 )
+
+[node name="ApathyBrainPickup15" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, -38 )
+
+[node name="ApathyBrainPickup16" parent="." instance=ExtResource( 8 )]
+position = Vector2( 36, -38 )
+
+[node name="RageBrainPickup8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 100, -40 )
+
+[node name="RageBrainPickup10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 100, -40 )
+
+[node name="ApathyBrainPickup8" parent="." instance=ExtResource( 8 )]
+position = Vector2( 62, -32 )
+
+[node name="RageBrainPickup9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 90, -24 )
+
+[node name="ApathyBrainPickup9" parent="." instance=ExtResource( 8 )]
+position = Vector2( 52, -16 )
+
+[node name="RageNervousSystemPickup" parent="." instance=ExtResource( 9 )]
+position = Vector2( 139, -65 )
+
+[node name="SorrowOperatingSystemPickup" parent="." instance=ExtResource( 10 )]
+position = Vector2( 188, -86 )
+
+[node name="RageNervousSystemPickup2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 136, -97 )
+
+[node name="SorrowOperatingSystemPickup2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 185, -118 )
+
+[node name="RageNervousSystemPickup3" parent="." instance=ExtResource( 9 )]
+position = Vector2( 140, -85 )
+
+[node name="SorrowOperatingSystemPickup3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 189, -106 )
+
+[node name="RageNervousSystemPickup4" parent="." instance=ExtResource( 9 )]
+position = Vector2( 155, -76 )
+
+[node name="SorrowOperatingSystemPickup4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 204, -97 )
+
+[node name="RageNervousSystemPickup5" parent="." instance=ExtResource( 9 )]
+position = Vector2( 125, -75 )
+
+[node name="SorrowOperatingSystemPickup5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 174, -96 )
+
+[node name="RageNervousSystemPickup6" parent="." instance=ExtResource( 9 )]
+position = Vector2( 108, -87 )
+
+[node name="SorrowOperatingSystemPickup6" parent="." instance=ExtResource( 10 )]
+position = Vector2( 157, -108 )
+
+[editable path="test_character_2"]
+[editable path="test_character_4"]

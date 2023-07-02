@@ -1,0 +1,290 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://characters/character.gd" type="Script" id=1]
+[ext_resource path="res://characters/character.png" type="Texture" id=2]
+[ext_resource path="res://characters/character_states/state_machine.gd" type="Script" id=3]
+[ext_resource path="res://characters/character_states/idle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/character_states/run.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/character_states/dash.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/character_states/dodge.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=7]
+resource_name = "DashDown"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 16 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "DashLeft"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 19 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "DashRight"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 18 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "DashUp"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 17 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "IdleDown"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "IdleLeft"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14, 15 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "IdleRight"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "IdleUp"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "RunDown"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 20, 21, 20, 22, 23, 24, 23, 22 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "RunLeft"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 35, 36, 37, 38, 35, 36, 39, 38 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "RunRight"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 30, 31, 32, 33, 30, 31, 34, 33 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "RunUp"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 25, 26, 25, 27, 28, 29, 28, 27 ]
+}
+
+[node name="Character" type="KinematicBody2D"]
+position = Vector2( 0, 1 )
+z_index = 100
+script = ExtResource( 1 )
+rarity = "Rare"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/DashDown = SubResource( 7 )
+anims/DashLeft = SubResource( 8 )
+anims/DashRight = SubResource( 9 )
+anims/DashUp = SubResource( 10 )
+anims/IdleDown = SubResource( 1 )
+anims/IdleLeft = SubResource( 12 )
+anims/IdleRight = SubResource( 13 )
+anims/IdleUp = SubResource( 11 )
+anims/RunDown = SubResource( 3 )
+anims/RunLeft = SubResource( 6 )
+anims/RunRight = SubResource( 5 )
+anims/RunUp = SubResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+hframes = 20
+vframes = 2
+frame = 19
+
+[node name="StateMachine" type="Node2D" parent="."]
+script = ExtResource( 3 )
+initial_state = NodePath("Idle")
+
+[node name="Idle" parent="StateMachine" instance=ExtResource( 4 )]
+
+[node name="Run" parent="StateMachine" instance=ExtResource( 5 )]
+
+[node name="Dash" parent="StateMachine" instance=ExtResource( 6 )]
+
+[node name="Dodge" parent="StateMachine" instance=ExtResource( 7 )]
+
+[node name="ProjectileSpawn" type="Sprite" parent="."]
+
+[node name="Weapon" type="Node2D" parent="ProjectileSpawn"]
+visible = false
+position = Vector2( 17, 11 )
+
+[node name="Left" type="Sprite" parent="ProjectileSpawn"]
+
+[node name="Right" type="Sprite" parent="ProjectileSpawn"]
+
+[node name="Up" type="Sprite" parent="ProjectileSpawn"]
+
+[node name="Down" type="Sprite" parent="ProjectileSpawn"]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+margin_left = -24.0
+margin_top = -57.0
+margin_right = 24.0
+margin_bottom = -41.0
+align = 1
+valign = 1
+
+[node name="AutoAim" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AutoAim"]
+
+[node name="Equipment" type="Node2D" parent="."]
+visible = false
+
+[node name="Brain" type="Node2D" parent="Equipment"]
+
+[node name="Skeleton" type="Node2D" parent="Equipment"]
+
+[node name="OperatingSystem" type="Node2D" parent="Equipment"]
+
+[node name="NervousSystem" type="Node2D" parent="Equipment"]

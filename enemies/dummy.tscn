@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://hitbox/hitbox.gd" type="Script" id=1]
+[ext_resource path="res://enemies/dummy.gd" type="Script" id=2]
+[ext_resource path="res://hurtbox/hurtbox.gd" type="Script" id=3]
+[ext_resource path="res://test.png" type="Texture" id=4]
+[ext_resource path="res://statuses/statuses.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 7.0
+
+[node name="Dummy" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 65
+script = ExtResource( 2 )
+hp = 20.0
+damage = 1.0
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 4 )
+hframes = 13
+
+[node name="Label" type="Label" parent="."]
+margin_left = -20.0
+margin_top = -46.0
+margin_right = 20.0
+margin_bottom = -32.0
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource( 1 )
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 8
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource( 3 )
+
+[node name="StatusHolder" parent="." instance=ExtResource( 5 )]
+margin_top = -24.0
+margin_bottom = -24.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 9 )
+shape = SubResource( 2 )

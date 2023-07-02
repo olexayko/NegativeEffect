@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://pickups/pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://pickups/inventory_pickup.gd" type="Script" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 17.0294
+
+[node name="InventoryPickup" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_description_": "pickup, which goes to inventory on pickup"
+}
+
+[node name="CollisionShape" parent="Area" index="0"]
+shape = SubResource( 1 )

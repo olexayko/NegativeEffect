@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://characters/character_classes/blunt_character/states/blunt_attack_3.gd" type="Script" id=1]
+[ext_resource path="res://characters/character_states/character_state.tscn" type="PackedScene" id=2]
+
+[node name="BluntAttack3" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+next_attack_state = NodePath("")
+
+[node name="Timer0" type="Timer" parent="." index="0"]
+one_shot = true
+
+[node name="Timer1" type="Timer" parent="." index="1"]
+one_shot = true
+
+[node name="Timer2" type="Timer" parent="." index="2"]
+one_shot = true
+
+[node name="Timer3" type="Timer" parent="." index="3"]
+one_shot = true
+
+[node name="Timer4" type="Timer" parent="." index="4"]
+one_shot = true
+
+[node name="Timer5" type="Timer" parent="." index="5"]
+one_shot = true
+
+[node name="Timer6" type="Timer" parent="." index="6"]
+one_shot = true

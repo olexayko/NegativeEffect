@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/gear/inventory_gear_equipment_item.tscn" type="PackedScene" id=1]
+
+[node name="InventoryOperatingEquipmentItem" instance=ExtResource( 1 )]
+equipment_type = "OperatingSystem"

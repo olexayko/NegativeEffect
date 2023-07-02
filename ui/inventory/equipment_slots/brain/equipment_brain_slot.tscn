@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://ui/inventory/equipment_slots/equipment_slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/inventory/equipment_slots/brain/equipment_brain_slot.gd" type="Script" id=2]
+[ext_resource path="res://ui/inventory/equipment_slots/brain/equipment_acceptable_brain_slot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/inventory/equipment_slots/brain/equipment_drag_brain_slot.tscn" type="PackedScene" id=5]
+
+[node name="EquipmentBrainSlot" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="EquipmentAcceptableBrainSlot" parent="." index="2" instance=ExtResource( 4 )]
+equipment_slot = NodePath("..")
+
+[node name="EquipmentDragBrainSlot" parent="." index="3" instance=ExtResource( 5 )]
+equipment_slot = NodePath("..")

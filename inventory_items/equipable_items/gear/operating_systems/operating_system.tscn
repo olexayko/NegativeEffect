@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/gear/operating_systems/operating_system.gd" type="Script" id=1]
+[ext_resource path="res://inventory_items/equipable_items/gear/gear.tscn" type="PackedScene" id=2]
+
+[node name="OperatingSystem" instance=ExtResource( 2 )]
+script = ExtResource( 1 )

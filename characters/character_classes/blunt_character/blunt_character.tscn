@@ -1,0 +1,263 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://characters/character_classes/blunt_character/blunt_character.gd" type="Script" id=1]
+[ext_resource path="res://characters/character_blunt.png" type="Texture" id=2]
+[ext_resource path="res://characters/character_classes/blunt_character/states/blunt_attack.tscn" type="PackedScene" id=3]
+[ext_resource path="res://characters/character_classes/blunt_character/states/blunt_attack_2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/character_classes/blunt_character/states/blunt_attack_3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/character.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/character_classes/blunt_character/states/blunt_attack_1.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=2]
+resource_name = "AttackDown1"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 40, 41, 40, 42, 43, 42, 44 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "AttackDown2"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 43, 45, 46, 44, 47, 48, 47, 40 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "AttackDown3"
+length = 2.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.55, 0.6, 0.65, 1.4, 1.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 48, 49, 41, 40, 42, 43, 42, 44 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "AttackLeft1"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 74, 75, 76, 77, 78, 79, 78, 80 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "AttackLeft2"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 79, 81, 82, 83, 84, 85, 84, 86 ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "AttackLeft3"
+length = 2.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.55, 0.6, 0.65, 1.4, 1.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 85, 87, 76, 77, 78, 79, 78, 80 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "AttackRight1"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 60, 61, 62, 63, 64, 65, 64, 66 ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "AttackRight2"
+length = 2.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 65, 67, 68, 69, 70, 71, 70, 72 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "AttackRight3"
+length = 2.2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.55, 0.6, 0.65, 1.4, 1.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 71, 73, 62, 63, 64, 65, 64, 66 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "AttackUp1"
+length = 1.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 50, 51, 50, 52, 53, 52, 54 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "AttackUp2"
+length = 1.3
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.35, 0.4, 0.45, 1.2, 1.25 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 53, 55, 56, 54, 57, 58, 57, 50 ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "AttackUp3"
+length = 1.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.55, 0.6, 0.65, 1.4, 1.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 58, 59, 51, 50, 52, 53, 52, 54 ]
+}
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 35.0143
+
+[node name="BluntCharacter" instance=ExtResource( 6 )]
+script = ExtResource( 1 )
+attack = NodePath("StateMachine/BluntAttack")
+attack_type = "Blunt"
+
+[node name="AnimationPlayer" parent="." index="0"]
+anims/AttackDown1 = SubResource( 2 )
+anims/AttackDown2 = SubResource( 3 )
+anims/AttackDown3 = SubResource( 4 )
+anims/AttackLeft1 = SubResource( 11 )
+anims/AttackLeft2 = SubResource( 12 )
+anims/AttackLeft3 = SubResource( 13 )
+anims/AttackRight1 = SubResource( 8 )
+anims/AttackRight2 = SubResource( 9 )
+anims/AttackRight3 = SubResource( 10 )
+anims/AttackUp1 = SubResource( 5 )
+anims/AttackUp2 = SubResource( 6 )
+anims/AttackUp3 = SubResource( 7 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+vframes = 5
+frame = 80
+
+[node name="BluntAttack" parent="StateMachine" index="3" instance=ExtResource( 3 )]
+next_state = NodePath("../BluntAttack1")
+
+[node name="BluntAttack1" parent="StateMachine" index="4" instance=ExtResource( 7 )]
+next_attack_state = NodePath("../BluntAttack2")
+
+[node name="BluntAttack2" parent="StateMachine" index="5" instance=ExtResource( 4 )]
+next_attack_state = NodePath("../BluntAttack3")
+
+[node name="BluntAttack3" parent="StateMachine" index="6" instance=ExtResource( 5 )]
+next_attack_state = NodePath("../BluntAttack")
+
+[node name="Weapon" parent="ProjectileSpawn" index="0"]
+visible = true
+position = Vector2( 0, 0 )
+z_as_relative = false
+
+[node name="AutoAim" parent="." index="5"]
+visible = false
+
+[node name="CollisionShape2D" parent="AutoAim" index="0"]
+shape = SubResource( 1 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://pickups/inventory_pickup.tscn" type="PackedScene" id=1]
+[ext_resource path="res://rage_32.png" type="Texture" id=2]
+
+[node name="RageBrainPickup" instance=ExtResource( 1 )]
+inventory_item = "res://inventory_items/equipable_items/gear/brains/rage_brain/rage_brain_item.tscn"
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )

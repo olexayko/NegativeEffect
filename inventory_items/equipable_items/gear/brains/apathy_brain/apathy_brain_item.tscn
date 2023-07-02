@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://apathy_32.png" type="Texture" id=1]
+[ext_resource path="res://inventory_items/equipable_items/gear/brains/inventory_brain_equipment_item.tscn" type="PackedScene" id=3]
+
+[node name="ApathyBrainItem" instance=ExtResource( 3 )]
+texture = ExtResource( 1 )
+rarity = "Uncommon"
+pickup = "res://inventory_items/equipable_items/gear/brains/apathy_brain/apathy_brain_pickup.tscn"

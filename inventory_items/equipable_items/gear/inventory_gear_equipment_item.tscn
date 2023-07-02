@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/gear/inventory_gear_equipment_item.gd" type="Script" id=1]
+[ext_resource path="res://inventory_items/equipable_items/inventory_equipment_item.tscn" type="PackedScene" id=2]
+
+[node name="InventoryGearEquipmentItem" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+equipment_type = ""

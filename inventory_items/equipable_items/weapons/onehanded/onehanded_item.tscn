@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_items/equipable_items/weapons/inventory_equipment_weapon_item.tscn" type="PackedScene" id=1]
+[ext_resource path="res://inventory_items/equipable_items/weapons/onehanded/onehanded_item.gd" type="Script" id=2]
+
+[node name="InventoryOnehandedWeaponEquipmentItem" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+pickup = "res://inventory_items/equipable_items/weapons/onehanded/onehanded_pickup.tscn"
+equipment = "res://inventory_items/equipable_items/weapons/onehanded/onehanded.tscn"
+equipment_type = "OneHanded"

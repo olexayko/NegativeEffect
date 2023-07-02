@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://characters/character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/character_classes/pistol_character/pistol_character.gd" type="Script" id=2]
+[ext_resource path="res://characters/character_classes/pistol_character/states/pistol_attack.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 73.0069
+
+[node name="PistolCharacter" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+attack = NodePath("StateMachine/PistolAttack")
+attack_type = "Pistol"
+
+[node name="PistolAttack" parent="StateMachine" index="5" instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="AutoAim" index="0"]
+shape = SubResource( 1 )

@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/inventory/inventory_slot/inventory_drag_slot.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ui/sprites/inventory_item_slot.png" type="Texture" id=2]
+[ext_resource path="res://ui/inventory/inventory_slot/inventory_slot.gd" type="Script" id=3]
+[ext_resource path="res://ui/inventory/inventory_slot/inventory_accept_slot.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ui/sprites/inventory_item_slot_selected.png" type="Texture" id=5]
+
+[node name="Item1" type="Control"]
+mouse_filter = 1
+input_pass_on_modal_close_click = false
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="SelectedBorder" type="Sprite" parent="."]
+visible = false
+position = Vector2( -3, -3 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="Item" type="Node2D" parent="."]
+
+[node name="InventoryAcceptSlot" parent="." instance=ExtResource( 4 )]
+inventory_slot = NodePath("..")
+
+[node name="InventoryDragSlot" parent="." instance=ExtResource( 1 )]
+inventory_slot = NodePath("..")
+
+[node name="Unhighlight" type="Timer" parent="."]
+one_shot = true
+
+[node name="Label" type="Label" parent="."]
+margin_top = -4.0
+margin_right = 112.0
+margin_bottom = 12.0
+rect_scale = Vector2( 0.25, 0.25 )
+align = 1
+valign = 1

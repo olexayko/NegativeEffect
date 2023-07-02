@@ -1,0 +1,324 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://ui/ui.gd" type="Script" id=1]
+[ext_resource path="res://hp_bar_fill.png" type="Texture" id=2]
+[ext_resource path="res://hp_bar_under.png" type="Texture" id=3]
+[ext_resource path="res://ui/sprites/mini_map.png" type="Texture" id=4]
+[ext_resource path="res://ui/Negative Effect Font Thin.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://ability_icon16.png" type="Texture" id=6]
+[ext_resource path="res://ability_icon32.png" type="Texture" id=8]
+[ext_resource path="res://ui/inventory/inventory_ui.tscn" type="PackedScene" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 5 )
+
+[node name="UI" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="InventoryUI" parent="." instance=ExtResource( 14 )]
+visible = false
+
+[node name="TeamHpBar" type="Node2D" parent="."]
+position = Vector2( 8, 8 )
+
+[node name="TextureProgress" type="TextureProgress" parent="TeamHpBar"]
+margin_right = 101.0
+margin_bottom = 18.0
+value = 50.0
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+
+[node name="Skills" type="Node2D" parent="."]
+
+[node name="ActiveCharacter" type="Node2D" parent="Skills"]
+position = Vector2( 27, 248 )
+
+[node name="Common" type="Node2D" parent="Skills/ActiveCharacter"]
+
+[node name="Sprite" type="TextureProgress" parent="Skills/ActiveCharacter/Common"]
+margin_left = -19.0
+margin_top = -16.0
+margin_right = 13.0
+margin_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 8 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/ActiveCharacter/Common"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 16.0
+margin_right = 24.0
+margin_bottom = 32.0
+text = "text"
+align = 1
+valign = 1
+
+[node name="Ultimate" type="Node2D" parent="Skills/ActiveCharacter"]
+position = Vector2( 38, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/ActiveCharacter/Ultimate"]
+margin_left = -19.0
+margin_top = -16.0
+margin_right = 13.0
+margin_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 8 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/ActiveCharacter/Ultimate"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 16.0
+margin_right = 24.0
+margin_bottom = 32.0
+text = "text"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Skills/ActiveCharacter"]
+anchor_right = 0.003125
+anchor_bottom = 0.00555556
+margin_left = 53.0
+margin_top = 8.0
+margin_right = 155.0
+margin_bottom = 24.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "active character"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="InactiveCharacter1" type="Node2D" parent="Skills"]
+position = Vector2( 25, 174 )
+
+[node name="Common" type="Node2D" parent="Skills/InactiveCharacter1"]
+position = Vector2( -9, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/InactiveCharacter1/Common"]
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter1/Common"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 20.0
+align = 1
+valign = 1
+
+[node name="Ultimate" type="Node2D" parent="Skills/InactiveCharacter1"]
+position = Vector2( 13, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/InactiveCharacter1/Ultimate"]
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter1/Ultimate"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 20.0
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter1"]
+visible = false
+anchor_right = 0.003125
+anchor_bottom = 0.00555556
+margin_left = 23.0
+margin_top = -4.0
+margin_right = 151.0
+margin_bottom = 12.0
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_default_cursor_shape = 1
+text = "inactive"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="InactiveCharacter2" type="Node2D" parent="Skills"]
+position = Vector2( 25, 196 )
+
+[node name="Common" type="Node2D" parent="Skills/InactiveCharacter2"]
+position = Vector2( -9, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/InactiveCharacter2/Common"]
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter2/Common"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 20.0
+align = 1
+valign = 1
+
+[node name="Ultimate" type="Node2D" parent="Skills/InactiveCharacter2"]
+position = Vector2( 13, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/InactiveCharacter2/Ultimate"]
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter2/Ultimate"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 20.0
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter2"]
+visible = false
+anchor_right = 0.003125
+anchor_bottom = 0.00555556
+margin_left = 23.0
+margin_top = -4.0
+margin_right = 151.0
+margin_bottom = 12.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "inactive"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="InactiveCharacter3" type="Node2D" parent="Skills"]
+position = Vector2( 25, 218 )
+
+[node name="Common" type="Node2D" parent="Skills/InactiveCharacter3"]
+position = Vector2( -9, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/InactiveCharacter3/Common"]
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter3/Common"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 20.0
+align = 1
+valign = 1
+
+[node name="Ultimate" type="Node2D" parent="Skills/InactiveCharacter3"]
+position = Vector2( 13, 0 )
+
+[node name="Sprite" type="TextureProgress" parent="Skills/InactiveCharacter3/Ultimate"]
+grow_horizontal = 2
+grow_vertical = 2
+texture_under = ExtResource( 6 )
+texture_progress = ExtResource( 6 )
+fill_mode = 3
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter3/Ultimate"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -24.0
+margin_top = 4.0
+margin_right = 24.0
+margin_bottom = 20.0
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="Skills/InactiveCharacter3"]
+visible = false
+anchor_right = 0.003125
+anchor_bottom = 0.00555556
+margin_left = 23.0
+margin_top = -4.0
+margin_right = 151.0
+margin_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_scale = Vector2( 0.5, 0.5 )
+text = "inactive"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MiniMap" type="Node2D" parent="."]
+position = Vector2( 442, 38 )
+
+[node name="Sprite" type="Sprite" parent="MiniMap"]
+texture = ExtResource( 4 )
+
+[node name="DebugLabel" type="Label" parent="."]
+visible = false
+margin_left = 8.0
+margin_top = 32.0
+margin_right = 112.0
+margin_bottom = 48.0
+rect_scale = Vector2( 0.5, 0.5 )
+custom_constants/line_spacing = -3
+custom_fonts/font = SubResource( 1 )
+text = "debug console"
+__meta__ = {
+"_editor_description_": ""
+}

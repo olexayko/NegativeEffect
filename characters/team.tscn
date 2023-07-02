@@ -1,0 +1,90 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://characters/team.gd" type="Script" id=1]
+[ext_resource path="res://ui/ui.tscn" type="PackedScene" id=2]
+[ext_resource path="res://hurtbox/hurtbox.gd" type="Script" id=3]
+[ext_resource path="res://statuses/statuses.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/teammates/builder/builder.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/teammates/fireman/fireman.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/leaders/apathy/apathy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://characters/teammates/oni/oni.tscn" type="PackedScene" id=8]
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 6.0
+
+[sub_resource type="ShaderMaterial" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 32.0
+
+[node name="Team" type="KinematicBody2D"]
+collision_mask = 74
+script = ExtResource( 1 )
+speed = 100.0
+inventory_limit = 10
+ch1 = ExtResource( 7 )
+ch2 = ExtResource( 5 )
+ch3 = ExtResource( 8 )
+ch4 = ExtResource( 6 )
+
+[node name="UI" parent="." instance=ExtResource( 2 )]
+
+[node name="Character1" type="Node2D" parent="."]
+
+[node name="Character2" type="Node2D" parent="."]
+
+[node name="Character3" type="Node2D" parent="."]
+
+[node name="Character4" type="Node2D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+visible = false
+modulate = Color( 0.337255, 0, 1, 1 )
+position = Vector2( 0, 10 )
+shape = SubResource( 10 )
+
+[node name="Label" type="Label" parent="."]
+visible = false
+material = SubResource( 9 )
+margin_left = -128.0
+margin_top = -40.0
+margin_right = 128.0
+margin_bottom = -24.0
+text = "team"
+align = 1
+valign = 1
+
+[node name="HurtBox" type="Area2D" parent="."]
+visible = false
+collision_mask = 8
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape2D" parent="HurtBox"]
+visible = false
+shape = SubResource( 1 )
+
+[node name="PickupArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 32
+collision_mask = 16
+
+[node name="CollisionShape" type="CollisionShape2D" parent="PickupArea"]
+shape = SubResource( 7 )
+
+[node name="Camera" type="Camera2D" parent="."]
+visible = false
+current = true
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+
+[node name="StatusHolder" parent="." instance=ExtResource( 4 )]
+margin_top = -24.0
+margin_bottom = -24.0
+
+[node name="SwitchCooldown" type="Timer" parent="."]
+one_shot = true

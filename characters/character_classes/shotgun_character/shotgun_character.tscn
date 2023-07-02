@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://characters/character_classes/shotgun_character/shotgun_character.gd" type="Script" id=1]
+[ext_resource path="res://characters/character_classes/shotgun_character/states/shotgun_attack.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/character.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 47.0425
+
+[node name="ShotgunCharacter" instance=ExtResource( 3 )]
+script = ExtResource( 1 )
+attack = NodePath("StateMachine/ShotgunAttack")
+attack_type = "Shotgun"
+
+[node name="ShotgunAttack" parent="StateMachine" index="3" instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="AutoAim" index="0"]
+shape = SubResource( 1 )

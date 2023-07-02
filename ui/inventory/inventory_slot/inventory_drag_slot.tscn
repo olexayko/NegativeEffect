@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ui/inventory/inventory_slot/inventory_drag_slot.gd" type="Script" id=1]
+
+[node name="InventoryDragSlot" type="Node2D"]
+z_index = 4096
+script = ExtResource( 1 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 28.0
+margin_bottom = 28.0
+mouse_filter = 1
+
+[node name="Sprite" type="Sprite" parent="Control"]
+centered = false
+
+[node name="RemainForCapture" type="Timer" parent="."]
+one_shot = true

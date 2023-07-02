@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://characters/character_classes/rifle_character/rifle_character.gd" type="Script" id=1]
+[ext_resource path="res://characters/character.tscn" type="PackedScene" id=2]
+[ext_resource path="res://characters/character_classes/rifle_character/states/rifle_attack.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 88.0
+
+[node name="RifleCharacter" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+attack_type = "Rifle"
+
+[node name="RifleAttack" parent="StateMachine" index="3" instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="AutoAim" index="0"]
+shape = SubResource( 1 )

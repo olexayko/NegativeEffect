@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://characters/character_classes/blunt_character/blunt_character.tscn" type="PackedScene" id=1]
+[ext_resource path="res://characters/teammates/builder/builder.gd" type="Script" id=2]
+[ext_resource path="res://inventory_items/equipable_items/weapons/blunt/blunt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/teammates/builder/abilities/common.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/teammates/builder/abilities/ultimate.tscn" type="PackedScene" id=6]
+
+
+[node name="Builder" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+common_skill = NodePath("StateMachine/CommonSkill")
+ultimate_skill = NodePath("StateMachine/UltimateSkill")
+default_weapon = ExtResource( 4 )
+condition_type = "Dullness"
+rarity = "Legendary"
+
+[node name="BluntAttack1" parent="StateMachine" index="4"]
+lengths = [ 0.4, 0.1, 0, 0.2, 2, 1 ]
+
+[node name="BluntAttack2" parent="StateMachine" index="5"]
+lengths = [ 0.4, 0.1, 0, 0.2, 2, 1 ]
+
+[node name="BluntAttack3" parent="StateMachine" index="6"]
+lengths = [ 0.4, 0.1, 0, 0.2, 2, 1 ]
+
+[node name="CommonSkill" parent="StateMachine" index="7" instance=ExtResource( 5 )]
+
+[node name="UltimateSkill" parent="StateMachine" index="8" instance=ExtResource( 6 )]

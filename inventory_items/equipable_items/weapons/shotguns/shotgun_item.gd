@@ -1,0 +1,3 @@
+extends InventoryEquipmentWeaponItem
+class_name InventoryShotgunEquipmentWeaponItem
+

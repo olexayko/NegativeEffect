@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://inventory_items/inventory_item.gd" type="Script" id=1]
+[ext_resource path="res://ui/sprites/inventory_item_slot.png" type="Texture" id=3]
+
+[node name="InventoryItem" type="Sprite"]
+centered = false
+script = ExtResource( 1 )
+rarity = "Common"
+
+[node name="Sprite" type="Sprite" parent="."]
+show_behind_parent = true
+texture = ExtResource( 3 )
+centered = false
